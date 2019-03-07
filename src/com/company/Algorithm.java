@@ -2,19 +2,22 @@ package com.company;
 
 public class Algorithm {
 
-    public void myFunc(){
-        int[] intArray = new int[7];
+    public int[] bubbleSort(int[] a){
 
-        intArray[0] = 20;
-        intArray[1] = 35;
-        intArray[2] = -15;
-        intArray[3] = 7;
-        intArray[4] = 55;
-        intArray[5] = 1;
-        intArray[6] = -22;
-
-        for (int i = 0; i < intArray.length ; i++) {
-            System.out.println(intArray[i]);
+        // loop over the entire array.
+        for (int i = 0; i < a.length; i++) {
+            // loop over the unsorted subarray.
+            for (int j = 1; j < a.length - i; j++) {
+                // if the next element in the sub array is larger
+                // then swap the elements.
+                if( a[j - 1] < a[j]){
+                    int temp = a[j];
+                    a[j] = a[j - 1];
+                    a[j - 1] = temp;
+                }
+            }
         }
+
+        return a;
     }
 }
