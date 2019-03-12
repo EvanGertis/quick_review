@@ -20,4 +20,21 @@ public class Algorithm {
 
         return a;
     }
+
+    public int[] selectionSort(int[] a){
+
+        //loop over the entire array.
+        for (int i = a.length - 1; i >= 0; i--){
+            //loop over the sub array
+            for(int j =0; j < i; j++){
+                if(a[j] > a[i]){
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+
+        return a;
+    }
 }

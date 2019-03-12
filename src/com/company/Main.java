@@ -23,7 +23,7 @@ public class Main {
 		System.out.println();
 
     	Algorithm algorithm = new Algorithm();
-		int[] sortedArray = algorithm.bubbleSort(intArray);
+		int[] sortedArray = algorithm.selectionSort(intArray);
 
 		// print out test array.
 		for (int i = 0; i < sortedArray.length ; i++) {
