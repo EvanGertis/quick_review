@@ -1,7 +1,29 @@
 package com.company;
 
+import java.util.Random;
+
+//This class implements common algorithms and
+// datastructures.
 public class Algorithm {
 
+    //generates a random array of size n for testing.
+    //Begin generateRandomArray.
+    public int[] generateRandomArray( int size){
+        //use random number gen object.
+        Random rand = new Random();
+        int[] a = new int[size];
+
+        for(int i = 0; i < size; i++){
+            a[i] = rand.nextInt(100);
+        }
+
+        return a;
+    }
+    //End generateRandomArray.
+
+    //sorts wby progressively swapping elements until
+    //the largest value bubbles to the end.
+    // Begin bubbleSort.
     public int[] bubbleSort(int[] a){
 
         // loop over the entire array.
@@ -20,13 +42,19 @@ public class Algorithm {
 
         return a;
     }
+    // End bubbleSort.
 
+    //swaps by sorting the largest element with the last element
+    //until subsorted array is filled.
+    //Begin selectionSort.
     public int[] selectionSort(int[] a){
 
         //loop over the entire array.
         for (int i = a.length - 1; i >= 0; i--){
             //loop over the sub array
             for(int j =0; j < i; j++){
+
+                //if the biggest item is larger than the last item then swap.
                 if(a[j] > a[i]){
                     int temp = a[i];
                     a[i] = a[j];
@@ -37,4 +65,18 @@ public class Algorithm {
 
         return a;
     }
+    // End selectionSort.
+
+    // displays each element inline with a new line at the end
+    // of the array.
+    // Begin displayArray.
+    public void displayArray(int[] a){
+        // print out test array.
+        for (int i = 0; i < a.length ; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.println();
+
+    }
+    // End displayArray.
 }
