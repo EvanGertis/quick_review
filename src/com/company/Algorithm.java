@@ -79,4 +79,30 @@ public class Algorithm {
 
     }
     // End displayArray.
+
+    //sorts an array from right to left by creating
+    //a sorted subarray. If the value to the left of the
+    //the last sorted subarray index is greater than the
+    //element at to the right then the lower element is selected.
+    //it is then moved down the sorted subarray to its correct position.
+    //Begin seledctionSort(int[])
+    public int[] seledctionSort(int[] a){
+        //used to store selected element value.
+        int temp;
+
+        //start sorted subarray at outer loop.
+        for(int i = 1; i < a.length; i++){
+            if(a[i-1] > a[i]){
+                temp = a[i+1];
+                a[i+1] = a[i];
+                for(int j = 0; j < i; j++){
+                    if(a[j] < temp){
+                        a[j] = temp;
+                    }
+                }
+            }
+        }
+        return a;
+    }
+    //End selectionSort.
 }
