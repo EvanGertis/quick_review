@@ -13,7 +13,7 @@ public class Main {
     	algorithm.displayArray(intArray);
 
     	//sort.
-		int[] sortedArray = algorithm.selectionSort(intArray);
+		int[] sortedArray = algorithm.insertionSort(intArray);
 
 		algorithm.displayArray(sortedArray);
     }

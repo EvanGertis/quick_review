@@ -85,17 +85,18 @@ public class Algorithm {
     //the last sorted subarray index is greater than the
     //element at to the right then the lower element is selected.
     //it is then moved down the sorted subarray to its correct position.
-    //Begin seledctionSort(int[])
-    public int[] seledctionSort(int[] a){
+    //Begin selectionSort(int[])
+    public int[] mySelectionSort(int[] a){
         //used to store selected element value.
         int temp;
 
         //start sorted subarray at outer loop.
         for(int i = 1; i < a.length; i++){
-            if(a[i-1] > a[i]){
+            this.displayArray(a);
+            if(a[i] > a[i-1]){
                 temp = a[i+1];
                 a[i+1] = a[i];
-                for(int j = 0; j < i; j++){
+                for(int j = 0; j < a.length; j++){
                     if(a[j] < temp){
                         a[j] = temp;
                     }
@@ -105,4 +106,21 @@ public class Algorithm {
         return a;
     }
     //End selectionSort.
+
+    public int[] insertionSort(int[] a){
+            for(int i = 1; i < a.length; i ++){
+                int temp = a[i];
+
+                int j;
+
+                //loop over sorted subarray
+                for(j = i; j >0 && a[j -1] > temp; j--){
+                    a[j] = a[j-1];
+                }
+
+                a[j] = temp;
+            }
+
+            return a;
+    }
 }
